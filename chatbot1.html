@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealthMate – Your Medical Chat Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      background-image: url('https://images.unsplash.com/photo-1588776814546-0ce4fc9c40aa?fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    header h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .content img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .content h2 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .content img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🩺 HealthMate – Your Medical Chat Assistant</h1>
+  </header>
+
+  <div class="content">
+    <img src="https://cdn-icons-png.flaticon.com/512/476/476863.png" alt="Doctor chatbot illustration" />
+    <h2>Feeling unwell?</h2>
+    <p>
+      HealthMate uses advanced AI to understand your symptoms and guide you<br>
+      to the right medical specialist — no confusion, no delays.
+    </p>
+    <p>
+      Click the chat icon below to start your conversation now.
+    </p>
+  </div>
+
+  <footer>
+    © 2025 HealthMate by B Vinayaka Sai. All rights reserved.
+  </footer>
+
+  <!-- Watson Assistant Chat Integration -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "754aeb1d-eabd-4075-9db4-95548f4d4895",
+      region: "us-south",
+      serviceInstanceID: "a803b3a4-43f4-4ed8-a83b-812139cb2bb6",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function () {
+      const t = document.createElement('script');
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+              (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+              "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
